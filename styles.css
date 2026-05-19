@@ -785,46 +785,56 @@ main > section {
   }
   .site-nav nav a { font-size: 13px; }
 
-  /* Hero — tearaway left, GIF right with tearaway slightly overlapping
-     the GIF for a cohesive layered composition */
+  /* Hero — tearaway left | text right at top; GIF standalone row below */
   .hero {
-    display: grid;
-    grid-template-columns: 1fr 124px;
-    grid-template-rows: auto;
-    column-gap: 0;          /* overlap handles visual spacing */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     padding-top: 28px;
-    padding-bottom: 28px;
+    padding-bottom: 12px !important;  /* GIF sits close above audience section */
+  }
+  /* Two-column grid inside hero-text: tearaway left, h1+lede+cta right */
+  .hero-text {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    column-gap: 14px;
     align-items: start;
   }
-  .hero-text {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  /* Tearaway leans slightly over the GIF's left edge */
   .hero .launch-tearaway {
-    position: relative;
-    z-index: 2;
-    margin-right: -18px;    /* overlap: calendar edge bleeds onto GIF */
+    grid-column: 1;
+    grid-row: 1 / 5;        /* spans all text rows */
+    align-self: start;
+    margin-right: 0;
     margin-bottom: 0;
+    position: static;
+    z-index: auto;
   }
-  .hero-image {
+  .hero h1 {
     grid-column: 2;
     grid-row: 1;
+    font-size: min(5vw, 18px);
+    margin-top: 0;
+  }
+  .hero .lede {
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 14px;
+    margin-top: 6px;
+  }
+  .hero .hero-ctas {
+    grid-column: 2;
+    grid-row: 3;
+    margin-top: 10px;
+  }
+  /* GIF: centered standalone row, sits just above the audience section */
+  .hero-image {
     order: 0;
-    position: relative;
-    z-index: 1;
-    max-width: 124px;
+    max-width: 260px;
     width: 100%;
-    margin: 0;
-    align-self: start;
+    margin: 0 auto;
+    position: static;
+    z-index: auto;
   }
-  /* h1: ensure "Roll dice. Build crosswords." stays on one line */
-  .hero h1 {
-    white-space: nowrap;
-    font-size: min(5.2vw, 20px);
-    margin-top: 16px;
-  }
-  .hero .lede { font-size: 16px; margin-top: 4px; }
 
   /* Heading scale-down for non-hero sections */
   h1 { font-size: clamp(22px, 5.5vw, 30px); }
@@ -928,10 +938,10 @@ main > section {
 
   h1 { font-size: clamp(16px, 5vw, 22px); }
   h2 { font-size: clamp(18px, 6vw, 24px); }
-  /* Hero: shrink GIF column and h1 slightly for very small screens */
-  .hero { grid-template-columns: 1fr 88px; }
-  .hero-image { max-width: 88px; }
-  .hero h1 { font-size: min(4.8vw, 18px); }
+  /* Hero: match tearaway column to the smaller tearaway size */
+  .hero-text { grid-template-columns: 116px 1fr; }
+  .hero h1 { font-size: min(4.6vw, 16px); }
+  .hero-image { max-width: 220px; }
   .hero .lede { font-size: 15px; }
 
   /* Hero tearaway — even smaller on very small screens */
