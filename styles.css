@@ -785,26 +785,35 @@ main > section {
   }
   .site-nav nav a { font-size: 13px; }
 
-  /* Hero — 2-column grid: text-column left, GIF right (~60% of prior 260px) */
+  /* Hero — tearaway left, GIF right with tearaway slightly overlapping
+     the GIF for a cohesive layered composition */
   .hero {
     display: grid;
-    grid-template-columns: 1fr 110px;
+    grid-template-columns: 1fr 124px;
     grid-template-rows: auto;
-    column-gap: 14px;
+    column-gap: 0;          /* overlap handles visual spacing */
     padding-top: 28px;
     padding-bottom: 28px;
     align-items: start;
   }
-  /* hero-text fills the left column; GIF is the right column */
   .hero-text {
     grid-column: 1;
     grid-row: 1;
   }
+  /* Tearaway leans slightly over the GIF's left edge */
+  .hero .launch-tearaway {
+    position: relative;
+    z-index: 2;
+    margin-right: -18px;    /* overlap: calendar edge bleeds onto GIF */
+    margin-bottom: 0;
+  }
   .hero-image {
     grid-column: 2;
     grid-row: 1;
-    order: 0;           /* cancel the order:-1 that previously put it above */
-    max-width: 110px;
+    order: 0;
+    position: relative;
+    z-index: 1;
+    max-width: 124px;
     width: 100%;
     margin: 0;
     align-self: start;
@@ -895,7 +904,15 @@ main > section {
   /* Center the RSVP button (inline-flex so it respects text-align) */
   .launch-rsvp { margin-top: 18px; }
   /* Center the tearaway calendar in the launch strip */
-  .launch-tearaway-right { margin: 0 auto; }
+  .launch-tearaway-right { margin: 16px auto 0; }
+  /* Bottom tearaway is 2× the hero tearaway for visual impact */
+  .launch-tearaway-right .tearaway-stack  { width: 280px; height: 308px; }
+  .launch-tearaway-right .tearaway-page   { padding: 36px 20px 24px; }
+  .launch-tearaway-right .tearaway-rings  { top: 6px; }
+  .launch-tearaway-right .tearaway-perfs  { top: 36px; }
+  .launch-tearaway-right .tearaway-num    { font-size: 112px; margin-top: 28px; letter-spacing: -4px; }
+  .launch-tearaway-right .tearaway-shout  { font-size: 44px; margin-top: 28px; }
+  .launch-tearaway-right .tearaway-label  { font-size: 19px; }
   .playtest-strip h2 { font-size: clamp(20px, 5vw, 26px); }
 
   /* Prevent any element with a fixed or min-width wider than viewport */
@@ -917,12 +934,19 @@ main > section {
   .hero h1 { font-size: min(4.8vw, 18px); }
   .hero .lede { font-size: 15px; }
 
-  /* Tearaway — even smaller on very small screens */
+  /* Hero tearaway — even smaller on very small screens */
   .tearaway-stack { width: 116px; height: 128px; }
   .tearaway-num { font-size: 46px; margin-top: 10px; }
   .tearaway-shout { font-size: 18px; margin-top: 10px; }
   .tearaway-label { font-size: 9px; }
   .tearaway-page { padding: 14px 8px 10px; }
+  /* Bottom tearaway stays large even on small phones */
+  .launch-tearaway-right .tearaway-stack  { width: 240px; height: 264px; }
+  .launch-tearaway-right .tearaway-page   { padding: 30px 18px 20px; }
+  .launch-tearaway-right .tearaway-num    { font-size: 96px; margin-top: 22px; }
+  .launch-tearaway-right .tearaway-label  { font-size: 16px; }
+  .launch-tearaway-right .tearaway-perfs  { top: 30px; }
+  .launch-tearaway-right .tearaway-rings  { top: 5px; }
 
   .way-card-body { padding: 14px 14px 16px; }
   .quote-dialog { padding: 22px 16px 18px; }
