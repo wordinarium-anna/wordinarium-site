@@ -812,13 +812,13 @@ main > section {
   .hero h1 {
     grid-column: 2;
     grid-row: 1;
-    font-size: min(5vw, 18px);
+    font-size: min(5.2vw, 20px);  /* same as previous layout */
     margin-top: 0;
   }
   .hero .lede {
     grid-column: 2;
     grid-row: 2;
-    font-size: 14px;
+    font-size: 16px;              /* same as previous layout */
     margin-top: 6px;
   }
   .hero .hero-ctas {
@@ -829,7 +829,7 @@ main > section {
   /* GIF: centered standalone row, sits just above the audience section */
   .hero-image {
     order: 0;
-    max-width: 260px;
+    max-width: 124px;             /* same as previous layout */
     width: 100%;
     margin: 0 auto;
     position: static;
@@ -940,8 +940,8 @@ main > section {
   h2 { font-size: clamp(18px, 6vw, 24px); }
   /* Hero: match tearaway column to the smaller tearaway size */
   .hero-text { grid-template-columns: 116px 1fr; }
-  .hero h1 { font-size: min(4.6vw, 16px); }
-  .hero-image { max-width: 220px; }
+  .hero h1 { font-size: min(4.8vw, 18px); }  /* same as previous layout */
+  .hero-image { max-width: 100px; }           /* same as previous layout */
   .hero .lede { font-size: 15px; }
 
   /* Hero tearaway — even smaller on very small screens */
