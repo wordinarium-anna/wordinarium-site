@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wordinarium//Launch Reminder//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:wordinarium-ios-launch-2026-06-09@letsplaywordinarium.com
+DTSTAMP:20260518T000000Z
+DTSTART:20260609T100000
+DTEND:20260609T103000
+SUMMARY:Wordinarium for iOS — launch day
+DESCRIPTION:The Wordinarium iOS app launches today. Visit letsplaywordinarium.com for the App Store link and the latest from Anna.
+URL:https://letsplaywordinarium.com
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Wordinarium for iOS launches today!
+TRIGGER:-PT0M
+END:VALARM
+END:VEVENT
+END:VCALENDAR

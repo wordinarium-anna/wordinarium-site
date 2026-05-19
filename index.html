@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wordinarium | A word-dice game for 2–4 players</title>
+  <meta name="description" content="Wordinarium is a word-dice board game for 2 to 4 players. Roll the dice, build the puzzle, slow down. Designed in Colorado." />
+
+  <meta property="og:title" content="Wordinarium" />
+  <meta property="og:description" content="A 2–4 player word-dice game where every roll creates a brand-new puzzle. Designed in Colorado." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://letsplaywordinarium.com" />
+  <meta property="og:image" content="https://letsplaywordinarium.com/images/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Wordinarium" />
+  <meta name="twitter:description" content="A 2–4 player word-dice game where every roll creates a brand-new puzzle." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="site-nav">
+    <a href="/" class="logo" aria-label="Wordinarium home">
+      <img src="images/wordinarium-logo.png" alt="Wordinarium" class="logo-img" />
+    </a>
+    <!--
+      Nav anchors scroll to homepage sections for now. Once you build
+      the standalone pages, swap each href to its real path:
+        #what-is   →  /how-to-play.html
+        #designer  →  /about.html
+        #playtest  →  /playtest.html
+      And add the FAQ link back when /faq.html exists.
+    -->
+    <nav>
+      <a href="#what-is">How to play</a>
+      <a href="#designer">The story</a>
+      <a href="#launch-party">Launch party</a>
+      <a href="https://wordgamegal.substack.com" target="_blank" rel="noopener noreferrer" class="nav-cta">Substack →</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-text">
+        <a href="#subscribe" class="launch-tearaway" aria-label="22 days until the Wordinarium app launch">
+          <div class="tearaway-stack">
+            <!-- Yesterday's page sits on top and tears away on page load -->
+            <div class="tearaway-page is-yesterday" aria-hidden="true">
+              <div class="tearaway-rings"><span></span><span></span></div>
+              <div class="tearaway-perfs"></div>
+              <div class="tearaway-num"><span class="prev-days">23</span></div>
+              <div class="tearaway-label">days until<br/>Wordinarium<br/>App Launch</div>
+            </div>
+            <!-- Today's page, revealed beneath -->
+            <div class="tearaway-page is-today">
+              <div class="tearaway-rings"><span></span><span></span></div>
+              <div class="tearaway-perfs"></div>
+              <div class="tearaway-num"><span class="days-left">22</span></div>
+              <div class="tearaway-label">days until<br/>Wordinarium<br/>App Launch</div>
+            </div>
+          </div>
+        </a>
+        <h1>Roll dice. Build crosswords.<br />Block &amp; Repeat.</h1>
+        <p class="lede">Coming to iOS, the Wordinarium App, on June 9th.</p>
+        <div class="hero-ctas">
+          <a href="/how-to-play.html" class="btn-text btn-text-strong">See game rules →</a>
+        </div>
+      </div>
+      <figure class="hero-image">
+        <img src="images/lets-play.gif" alt="Animated illustration: a regal figure stands inside an archway as letter tiles appear on the shelf below to spell ‘LET’S PLAY’" class="hero-gif" />
+      </figure>
+    </section>
+
+    <section class="audience">
+      <a href="wordinarium-launch.ics" download class="audience-card">
+        <img src="images/calendar.png" alt="" class="audience-icon" aria-hidden="true" />
+        <p class="audience-title">Set a reminder for the app launch</p>
+        <p class="audience-sub">10am, June 9 →</p>
+      </a>
+      <a href="https://wordgamegal.substack.com" target="_blank" rel="noopener noreferrer" class="audience-card">
+        <img src="images/notebook.png" alt="" class="audience-icon" aria-hidden="true" />
+        <p class="audience-title">Dive into the designer’s process</p>
+        <p class="audience-sub">Follow on Substack →</p>
+      </a>
+      <a href="#quotes" class="audience-card">
+        <img src="images/reviews.png" alt="" class="audience-icon" aria-hidden="true" />
+        <p class="audience-title">Playtester reviews</p>
+        <p class="audience-sub">See what people are saying →</p>
+      </a>
+    </section>
+
+    <section class="ways">
+      <h2 class="ways-title">Two ways to play</h2>
+      <p class="ways-sub">Wordinarium is playable in two ways — table top and online.</p>
+      <div class="ways-grid">
+        <article class="way-card">
+          <div
+            class="way-slideshow"
+            role="img"
+            aria-label="iOS app mockups: Active Games, leaderboard, daily puzzle, profile, and rules screens cycling every three seconds"
+            oncontextmenu="return false"
+          >
+            <img src="images/layouts/layout-01.png" alt="" class="slide active" draggable="false" />
+            <img src="images/layouts/layout-02.png" alt="" class="slide" draggable="false" />
+            <img src="images/layouts/layout-03.png" alt="" class="slide" draggable="false" />
+            <img src="images/layouts/layout-04.png" alt="" class="slide" draggable="false" />
+            <img src="images/layouts/layout-05.png" alt="" class="slide" draggable="false" />
+            <img src="images/layouts/layout-06.png" alt="" class="slide" draggable="false" />
+            <img src="images/layouts/layout-07.png" alt="" class="slide" draggable="false" />
+          </div>
+          <div class="way-card-body">
+            <div class="way-badge way-badge-amber">Launching June 9, 2026</div>
+            <h3>On your phone</h3>
+            <p>The iOS app brings Wordinarium to your pocket — quick rounds on your commute, daily puzzles over morning coffee, and endless head-to-head matches with a faraway friend.</p>
+            <a href="wordinarium-launch.ics" download class="btn-text">Set reminder for launch day →</a>
+          </div>
+        </article>
+        <article class="way-card">
+          <video
+            class="way-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="images/tabletop-poster.jpg"
+            disablepictureinpicture
+            controlslist="nodownload nofullscreen noremoteplayback"
+            oncontextmenu="return false"
+            aria-label="Short clip of opening the Wordinarium tabletop box at a café"
+          >
+            <source src="images/tabletop.mp4" type="video/mp4" />
+            <source src="images/tabletop.mov" type="video/quicktime" />
+          </video>
+          <div class="way-card-body">
+            <div class="way-badge way-badge-blue">Tabletop edition · this fall</div>
+            <h3>Around a table</h3>
+            <p>The physical edition — 52 dice, one board, and a score booklet — will go into production this fall. Made for 2–4 players to play wherever is most scenic.</p>
+            <a href="https://wordgamegal.substack.com" target="_blank" rel="noopener noreferrer" class="btn-text">Check out the designer’s process →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="what-is" class="what-is">
+      <h2>What is Wordinarium?</h2>
+      <div class="what-is-grid">
+        <img src="images/gameplay-shot.jpg" alt="A hand mid-roll, dice tumbling out of a cup onto a green tabletop where a crossword of yellow letter tiles is already laid out" class="what-is-photo" />
+        <div class="what-is-body">
+          <p>
+            This is the Bananagrams for date night. It’s chill and casual. You
+            roll 11 letter dice, build a crossword, and protect it with a few
+            block dice. The next player repeats the same sequence, building off
+            the same board. Each round is a new roll of the dice and crossword
+            created. Scoring is tallied by “1 point per word” created. There are
+            some special rules that help multiply the word score. After a round
+            per player is completed, the player with the most points is crowned
+            the winner of the game.
+          </p>
+          <a href="/how-to-play.html" class="btn btn-outline what-is-cta">
+            Check out the rules
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="quotes" class="quotes">
+      <p class="eyebrow centered">From recent playtests</p>
+      <div class="quote-grid">
+        <figure class="quote quote-truncated" data-full-quote-target="noah-full">
+          <blockquote>“Wordinarium forces me to think about word creation in a different way compared to typical word games like Scrabble. Playing a successful move requires a lot more holistic…”</blockquote>
+          <figcaption>— Noah G. <i>Denver Playtest and App Beta Playtest</i></figcaption>
+          <button type="button" class="quote-expand" aria-haspopup="dialog">Read full review →</button>
+        </figure>
+        <figure class="quote">
+          <blockquote>“I was so happy to be able to play the game again after getting a small taste of it at Christmas. I love the colors and the Bot was quick to play so it gave me great time to play and practice.”</blockquote>
+          <figcaption>— Shelby S. <i>App Beta Playtest</i></figcaption>
+        </figure>
+        <figure class="quote">
+          <blockquote>“My grandmother beat me twice. She wants to know when she can buy a copy.”</blockquote>
+          <figcaption>— Priya, Denver playtest</figcaption>
+        </figure>
+      </div>
+
+      <!-- Full review modal — opens when Noah's truncated quote card is clicked -->
+      <dialog id="noah-full" class="quote-dialog" aria-label="Full review from Noah G.">
+        <button type="button" class="quote-dialog-close" aria-label="Close">×</button>
+        <blockquote>“Wordinarium forces me to think about word creation in a different way compared to typical word games like Scrabble. Playing a successful move requires a lot more holistic consideration of your tiles and the board vs. just ‘how can I play the longest word’? The block dice are a great feature and add an extra friendly element of screwing over your pals. The pace of the game can be as fast or as slow as you want, and the turn-based structure makes it perfect for the online version as well as a casual get together with friends in person.”</blockquote>
+        <figcaption>— Noah G. <i>Denver Playtest and App Beta Playtest</i></figcaption>
+      </dialog>
+    </section>
+
+    <section id="subscribe" class="subscribe">
+      <div class="subscribe-inner">
+        <div class="diary-byline">
+          <img src="images/anna-portrait.jpg" alt="Anna, smiling, in front of a colourful restaurant tapestry" class="diary-avatar" />
+          <div>
+            <p class="eyebrow eyebrow-amber">The design log</p>
+            <p class="diary-author">Anna Olinger’s perspective of building a board game for the first time, images and videos of her process, and challenges along the way.</p>
+          </div>
+        </div>
+        <h2>Follow along on Substack</h2>
+        <!-- Live feed of recent Substack posts. JS at the bottom of the page
+             fetches Anna's RSS via rss2json on load and renders the cards. -->
+        <div class="substack-feed" data-feed="https://wordgamegal.substack.com/feed">
+          <div class="substack-feed-loading">Loading recent posts…</div>
+        </div>
+
+        <p class="subscribe-fallback">
+          <a href="https://wordgamegal.substack.com" target="_blank" rel="noopener noreferrer">Read more on Substack →</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="designer" class="designer">
+      <figure class="designer-photo">
+        <img src="images/anna-portrait.jpg" alt="Portrait of Anna, the Wordinarium designer" class="designer-portrait" />
+      </figure>
+      <div class="designer-text">
+        <p class="eyebrow">Meet the designer</p>
+        <h2>Product Designer and Thrifter Turned Board Game Inventor</h2>
+        <p>
+          Anna Olinger is a product designer who also has a love for thrifting.
+          December of 2024, she discovered a word-dice game from 1959 called
+          Scribbage at an antique mall. As a lover of vintage games, she
+          quickly became fascinated and began playing daily. Within a month,
+          Anna had played so frequently that she created a completely new set
+          of rules and additional pawns. After another year of playtesting,
+          prototyping, and refinement, she created Wordinarium.
+        </p>
+      </div>
+    </section>
+
+    <section id="launch-party" class="playtest-strip">
+      <div class="launch-party-text">
+        <p class="launch-eyebrow">Tuesday, June 9 · Denver</p>
+        <h2>Come to the launch party</h2>
+        <p>We’re toasting the iOS launch with friends, family, and Denver locals. Come help us celebrate for a game, a drink, and free access to the Wordinarium App.</p>
+        <!-- TODO: replace href with the real Partiful / Lu.ma / Eventbrite URL once it's set up -->
+        <a href="#" class="btn btn-outline launch-rsvp" target="_blank" rel="noopener noreferrer">RSVP →</a>
+      </div>
+      <a href="#subscribe" class="launch-tearaway launch-tearaway-right" aria-label="Countdown to the Wordinarium iOS launch on June 9, 2026">
+        <div class="tearaway-stack">
+          <div class="tearaway-page is-yesterday" aria-hidden="true">
+            <div class="tearaway-rings"><span></span><span></span></div>
+            <div class="tearaway-perfs"></div>
+            <div class="tearaway-num"><span class="prev-days">23</span></div>
+            <div class="tearaway-label">days until<br/>Wordinarium<br/>App Launch</div>
+          </div>
+          <div class="tearaway-page is-today">
+            <div class="tearaway-rings"><span></span><span></span></div>
+            <div class="tearaway-perfs"></div>
+            <div class="tearaway-num"><span class="days-left">22</span></div>
+            <div class="tearaway-label">days until<br/>Wordinarium<br/>App Launch</div>
+          </div>
+        </div>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p class="tagline">Woman owned. Invented in Colorado. Game for mosey.</p>
+    <div class="social">
+      <a href="https://wordgamegal.substack.com" target="_blank" rel="noopener noreferrer" aria-label="Substack">Substack</a>
+      <a href="https://instagram.com/wordinarium_" aria-label="Instagram">Instagram</a>
+      <a href="https://www.tiktok.com/@wordinarium_" aria-label="TikTok">TikTok</a>
+      <a href="mailto:letsplaywordinarium@gmail.com" aria-label="Email">Email</a>
+    </div>
+    <p class="copyright">© <span id="year">2026</span> Wordinarium. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // iOS app slideshow — cycles every 4.5 seconds, loops, can't be paused
+    (function () {
+      var slides = document.querySelectorAll('.way-slideshow .slide');
+      if (slides.length < 2) return;
+      var i = 0;
+      setInterval(function () {
+        slides[i].classList.remove('active');
+        i = (i + 1) % slides.length;
+        slides[i].classList.add('active');
+      }, 4500);
+    })();
+
+    // Live feed of recent Substack posts. Uses the public rss2json API to
+    // convert the Substack RSS feed into JSON (avoids CORS issues from file://).
+    (function () {
+      var container = document.querySelector('.substack-feed');
+      if (!container) return;
+      var feedUrl = container.getAttribute('data-feed');
+      if (!feedUrl) return;
+
+      var endpoint = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(feedUrl);
+
+      function escapeHtml(str) {
+        return String(str).replace(/[&<>"']/g, function (c) {
+          return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+        });
+      }
+
+      function formatDate(s) {
+        var d = new Date(s);
+        if (isNaN(d.getTime())) return '';
+        return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+      }
+
+      fetch(endpoint)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (!data || !data.items || !data.items.length) {
+            container.innerHTML = '<div class="substack-feed-loading">No posts yet — check back soon.</div>';
+            return;
+          }
+          var posts = data.items.slice(0, 4);
+          container.innerHTML = posts.map(function (p) {
+            // Substack RSS surfaces the featured image via thumbnail or
+            // enclosure.link — try both, fall back to a styled placeholder
+            var thumb = p.thumbnail || (p.enclosure && p.enclosure.link) || '';
+            var img = thumb
+              ? '<img class="substack-post-img" src="' + escapeHtml(thumb) + '" alt="" loading="lazy" />'
+              : '<div class="substack-post-img substack-post-img-empty" aria-hidden="true"></div>';
+            return '<a href="' + p.link + '" target="_blank" rel="noopener noreferrer" class="substack-post">' +
+              img +
+              '<div class="substack-post-text">' +
+                '<div class="substack-post-title">' + escapeHtml(p.title) + '</div>' +
+                '<div class="substack-post-date">' + formatDate(p.pubDate) + '</div>' +
+              '</div>' +
+              '</a>';
+          }).join('');
+        })
+        .catch(function () {
+          // Fail gracefully — show a direct link to the publication
+          container.innerHTML =
+            '<div class="substack-feed-loading">' +
+            '<a href="https://wordgamegal.substack.com" target="_blank" rel="noopener noreferrer">' +
+            'Open the latest on Substack →</a></div>';
+        });
+    })();
+
+    // Truncated playtester reviews — clicking the card or the "Read full
+    // review" button opens a modal with the full quote. Backdrop/ESC closes.
+    (function () {
+      var cards = document.querySelectorAll('.quote.quote-truncated');
+      cards.forEach(function (card) {
+        var dialog = document.getElementById(card.getAttribute('data-full-quote-target'));
+        if (!dialog || typeof dialog.showModal !== 'function') return;
+
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', function () { dialog.showModal(); });
+
+        var closeBtn = dialog.querySelector('.quote-dialog-close');
+        if (closeBtn) closeBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          dialog.close();
+        });
+
+        // Click on the dialog backdrop (outside the content) closes it
+        dialog.addEventListener('click', function (e) {
+          var rect = dialog.getBoundingClientRect();
+          var inside = e.clientX >= rect.left && e.clientX <= rect.right
+                    && e.clientY >= rect.top  && e.clientY <= rect.bottom;
+          if (!inside) dialog.close();
+        });
+      });
+    })();
+
+    // Replay the hero "Let's Play" GIF whenever it re-enters the viewport.
+    // First-time autoplay is handled by the browser when the page loads;
+    // this only triggers fresh playbacks after the visitor scrolls away and back.
+    (function () {
+      var img = document.querySelector('.hero-gif');
+      if (!img || typeof IntersectionObserver === 'undefined') return;
+      var originalSrc = img.getAttribute('src');
+      var hasBeenOutOfView = false;
+
+      function replay() {
+        img.src = '';
+        // Force the browser to drop the current frame and re-decode from start
+        void img.offsetHeight;
+        img.src = originalSrc;
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            if (hasBeenOutOfView) {
+              replay();
+              hasBeenOutOfView = false;
+            }
+          } else {
+            hasBeenOutOfView = true;
+          }
+        });
+      }, { threshold: 0.3 });
+
+      io.observe(img);
+    })();
+
+    // iOS launch countdown — applies to every .launch-tearaway on the page.
+    // Update the launch date here if it ever shifts.
+    (function () {
+      var launch = new Date('2026-06-09T00:00:00');
+      var blocks = document.querySelectorAll('.launch-tearaway');
+      if (!blocks.length) return;
+
+      var now = new Date();
+      var startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      var msPerDay = 1000 * 60 * 60 * 24;
+      var days = Math.ceil((launch - startOfToday) / msPerDay);
+
+      blocks.forEach(function (block) {
+        var today = block.querySelector('.days-left');
+        var prev  = block.querySelector('.prev-days');
+
+        if (days > 1) {
+          if (today) today.textContent = days;
+          if (prev)  prev.textContent  = days + 1;
+          block.setAttribute('aria-label', days + ' days until the Wordinarium app launch');
+        } else if (days === 1) {
+          if (today) today.textContent = '1';
+          if (prev)  prev.textContent  = '2';
+          block.setAttribute('aria-label', 'Wordinarium app launches tomorrow');
+        } else {
+          // Launch day & beyond — swap to an "It's here" page
+          var word = (days === 0) ? 'It’s<br/>here' : 'Now<br/>live';
+          block.innerHTML =
+            '<div class="tearaway-stack"><div class="tearaway-page is-today is-launch">' +
+            '  <div class="tearaway-rings"><span></span><span></span></div>' +
+            '  <div class="tearaway-perfs"></div>' +
+            '  <div class="tearaway-num tearaway-shout">' + word + '</div>' +
+            '  <div class="tearaway-label">Wordinarium<br/>app available<br/>on iOS</div>' +
+            '</div></div>';
+          block.setAttribute('aria-label', 'Wordinarium for iOS is available now');
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
