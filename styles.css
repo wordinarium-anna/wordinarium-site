@@ -785,58 +785,39 @@ main > section {
   }
   .site-nav nav a { font-size: 13px; }
 
-  /* Hero — tearaway left, GIF right (~60%), h1/lede full-width below */
+  /* Hero — 2-column grid: text-column left, GIF right (~60% of prior 260px) */
   .hero {
     display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto auto auto;
-    column-gap: 16px;
-    row-gap: 0;
+    grid-template-columns: 1fr 110px;
+    grid-template-rows: auto;
+    column-gap: 14px;
     padding-top: 28px;
     padding-bottom: 28px;
     align-items: start;
   }
-  /* Flatten hero-text so its children join the hero grid directly */
-  .hero-text { display: contents; }
-
-  /* Tearaway: top-left cell */
-  .hero .launch-tearaway {
+  /* hero-text fills the left column; GIF is the right column */
+  .hero-text {
     grid-column: 1;
     grid-row: 1;
-    align-self: center;
-    margin-bottom: 0;
   }
-  /* GIF: top-right cell, 60% of the previous max-width (260px → 156px) */
   .hero-image {
     grid-column: 2;
     grid-row: 1;
-    order: 0;
-    max-width: 156px;
+    order: 0;           /* cancel the order:-1 that previously put it above */
+    max-width: 110px;
     width: 100%;
     margin: 0;
-    align-self: center;
-    justify-self: start;
+    align-self: start;
   }
-  /* h1, lede, ctas: full-width rows below the tearaway/GIF pair */
+  /* h1: ensure "Roll dice. Build crosswords." stays on one line */
   .hero h1 {
-    grid-column: 1 / -1;
-    grid-row: 2;
+    white-space: nowrap;
+    font-size: min(5.2vw, 20px);
     margin-top: 16px;
-    white-space: nowrap;        /* keep "Roll dice. Build crosswords." on one line */
-    font-size: min(5.5vw, 22px);
   }
-  .hero .lede {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    font-size: 16px;
-    margin-top: 4px;
-  }
-  .hero .hero-ctas {
-    grid-column: 1 / -1;
-    grid-row: 4;
-  }
+  .hero .lede { font-size: 16px; margin-top: 4px; }
 
-  /* Heading & lede — scale down from desktop clamp values (non-hero) */
+  /* Heading scale-down for non-hero sections */
   h1 { font-size: clamp(22px, 5.5vw, 30px); }
   h2 { font-size: clamp(20px, 5vw, 28px); }
 
@@ -896,16 +877,25 @@ main > section {
   .designer-photo { max-width: 140px; }
   .designer-text h2 { font-size: clamp(19px, 4.5vw, 24px); }
 
-  /* Launch / playtest strip — stack vertically, centered */
+  /* Launch / playtest strip — stack vertically, all items centered */
   .playtest-strip {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
     padding: 24px 22px !important;
     margin: 24px auto 48px !important;
     border-radius: 12px;
   }
-  .launch-party-text { text-align: center; width: 100%; }
+  .launch-party-text {
+    text-align: center !important;
+    width: 100% !important;
+    flex: none !important;
+  }
+  /* Center the RSVP button (inline-flex so it respects text-align) */
+  .launch-rsvp { margin-top: 18px; }
+  /* Center the tearaway calendar in the launch strip */
+  .launch-tearaway-right { margin: 0 auto; }
   .playtest-strip h2 { font-size: clamp(20px, 5vw, 26px); }
 
   /* Prevent any element with a fixed or min-width wider than viewport */
@@ -921,8 +911,10 @@ main > section {
 
   h1 { font-size: clamp(16px, 5vw, 22px); }
   h2 { font-size: clamp(18px, 6vw, 24px); }
-  /* Hero h1 stays nowrap; ensure it fits at narrow widths */
-  .hero h1 { font-size: min(4.8vw, 19px); }
+  /* Hero: shrink GIF column and h1 slightly for very small screens */
+  .hero { grid-template-columns: 1fr 88px; }
+  .hero-image { max-width: 88px; }
+  .hero h1 { font-size: min(4.8vw, 18px); }
   .hero .lede { font-size: 15px; }
 
   /* Tearaway — even smaller on very small screens */
