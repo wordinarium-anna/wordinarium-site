@@ -785,19 +785,60 @@ main > section {
   }
   .site-nav nav a { font-size: 13px; }
 
-  /* Hero — single column, GIF above text */
+  /* Hero — tearaway left, GIF right (~60%), h1/lede full-width below */
   .hero {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding-top: 36px;
-    padding-bottom: 36px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 16px;
+    row-gap: 0;
+    padding-top: 28px;
+    padding-bottom: 28px;
+    align-items: start;
   }
-  .hero-image { order: -1; max-width: 260px; margin: 0 auto; }
+  /* Flatten hero-text so its children join the hero grid directly */
+  .hero-text { display: contents; }
 
-  /* Heading & lede — scale down from desktop clamp values */
-  h1 { font-size: clamp(24px, 6vw, 34px); }
+  /* Tearaway: top-left cell */
+  .hero .launch-tearaway {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    margin-bottom: 0;
+  }
+  /* GIF: top-right cell, 60% of the previous max-width (260px → 156px) */
+  .hero-image {
+    grid-column: 2;
+    grid-row: 1;
+    order: 0;
+    max-width: 156px;
+    width: 100%;
+    margin: 0;
+    align-self: center;
+    justify-self: start;
+  }
+  /* h1, lede, ctas: full-width rows below the tearaway/GIF pair */
+  .hero h1 {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin-top: 16px;
+    white-space: nowrap;        /* keep "Roll dice. Build crosswords." on one line */
+    font-size: min(5.5vw, 22px);
+  }
+  .hero .lede {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    font-size: 16px;
+    margin-top: 4px;
+  }
+  .hero .hero-ctas {
+    grid-column: 1 / -1;
+    grid-row: 4;
+  }
+
+  /* Heading & lede — scale down from desktop clamp values (non-hero) */
+  h1 { font-size: clamp(22px, 5.5vw, 30px); }
   h2 { font-size: clamp(20px, 5vw, 28px); }
-  .hero .lede { font-size: 16px; }
 
   /* Tearaway calendar card — scale down from 184×200 / 76px */
   .tearaway-stack {
@@ -855,14 +896,16 @@ main > section {
   .designer-photo { max-width: 140px; }
   .designer-text h2 { font-size: clamp(19px, 4.5vw, 24px); }
 
-  /* Launch / playtest strip — stack vertically, reduce padding */
+  /* Launch / playtest strip — stack vertically, centered */
   .playtest-strip {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     padding: 24px 22px !important;
     margin: 24px auto 48px !important;
     border-radius: 12px;
   }
+  .launch-party-text { text-align: center; width: 100%; }
   .playtest-strip h2 { font-size: clamp(20px, 5vw, 26px); }
 
   /* Prevent any element with a fixed or min-width wider than viewport */
@@ -876,8 +919,10 @@ main > section {
   .site-nav { padding: 10px 14px; }
   .site-nav nav a { font-size: 12px; }
 
-  h1 { font-size: clamp(22px, 7vw, 30px); }
+  h1 { font-size: clamp(16px, 5vw, 22px); }
   h2 { font-size: clamp(18px, 6vw, 24px); }
+  /* Hero h1 stays nowrap; ensure it fits at narrow widths */
+  .hero h1 { font-size: min(4.8vw, 19px); }
   .hero .lede { font-size: 15px; }
 
   /* Tearaway — even smaller on very small screens */
